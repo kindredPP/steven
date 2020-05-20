@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>slice、substr、substring | Steven</title>
+    <meta name="description" content="steven blog">
+    <meta name="generator" content="VuePress 1.4.0">
+    <link rel="icon" href="/img/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.42016cb5.css" as="style"><link rel="preload" href="/assets/js/app.0a6b0362.js" as="script"><link rel="preload" href="/assets/js/3.9f351766.js" as="script"><link rel="preload" href="/assets/js/2.cf7292cc.js" as="script"><link rel="preload" href="/assets/js/12.9c6a0b48.js" as="script"><link rel="prefetch" href="/assets/js/10.22ff72f7.js"><link rel="prefetch" href="/assets/js/11.76ab88b6.js"><link rel="prefetch" href="/assets/js/13.d01bec11.js"><link rel="prefetch" href="/assets/js/14.fd399f12.js"><link rel="prefetch" href="/assets/js/15.6eb51d3f.js"><link rel="prefetch" href="/assets/js/16.9863f569.js"><link rel="prefetch" href="/assets/js/17.8d4b8259.js"><link rel="prefetch" href="/assets/js/18.3303f1e7.js"><link rel="prefetch" href="/assets/js/19.ee58d024.js"><link rel="prefetch" href="/assets/js/20.ef8ff522.js"><link rel="prefetch" href="/assets/js/21.17101a27.js"><link rel="prefetch" href="/assets/js/22.024c6ef1.js"><link rel="prefetch" href="/assets/js/23.1fa351f7.js"><link rel="prefetch" href="/assets/js/24.e445f171.js"><link rel="prefetch" href="/assets/js/25.befbf741.js"><link rel="prefetch" href="/assets/js/26.95ee724c.js"><link rel="prefetch" href="/assets/js/27.7e8b6d5b.js"><link rel="prefetch" href="/assets/js/28.176facfa.js"><link rel="prefetch" href="/assets/js/29.1d432b4c.js"><link rel="prefetch" href="/assets/js/30.b318904b.js"><link rel="prefetch" href="/assets/js/31.464b5c62.js"><link rel="prefetch" href="/assets/js/32.ff5569cf.js"><link rel="prefetch" href="/assets/js/33.e237a5ae.js"><link rel="prefetch" href="/assets/js/34.8dcacd6f.js"><link rel="prefetch" href="/assets/js/35.f2e798a7.js"><link rel="prefetch" href="/assets/js/36.8f3a7094.js"><link rel="prefetch" href="/assets/js/37.1fae5890.js"><link rel="prefetch" href="/assets/js/38.d83a6a0c.js"><link rel="prefetch" href="/assets/js/4.01d2b371.js"><link rel="prefetch" href="/assets/js/5.410b2f3a.js"><link rel="prefetch" href="/assets/js/6.a83b6fcf.js"><link rel="prefetch" href="/assets/js/7.b0083a3b.js"><link rel="prefetch" href="/assets/js/8.f3f7ca37.js"><link rel="prefetch" href="/assets/js/9.2b125da0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.42016cb5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/st_blog.png" alt="Steven" class="logo"> <span class="site-name can-hide">Steven</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/record/" class="nav-link">
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/vue/sourcecode/" class="nav-link">
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/vue/extends/vueToElectron.html" class="nav-link">
+  扩展
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Nodejs" class="dropdown-title"><span class="title">Nodejs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/nodejs/book/" class="nav-link">
+  视频书籍总结
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/nvm/" class="nav-link">
+  nvm安装
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="性能" class="dropdown-title"><span class="title">性能</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/performance/webpack/" class="nav-link">
+  webpack性能提升
+</a></li><li class="dropdown-item"><!----> <a href="/performance/vue/" class="nav-link">
+  vue性能
+</a></li><li class="dropdown-item"><!----> <a href="/performance/nodejs/" class="nav-link">
+  nodejs性能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/ecma/this.html" class="nav-link">
+  ECMA
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/front-end/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/front-end/ast/" class="nav-link">
+  AST
+</a></li><li class="dropdown-subitem"><a href="/front-end/rules/" class="nav-link">
+  代码规范
+</a></li></ul></li><li class="dropdown-item"><h4>
+          架构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/cli-tool/" class="nav-link">
+  构建工具
+</a></li><li class="dropdown-subitem"><a href="/select/" class="nav-link">
+  选型
+</a></li><li class="dropdown-subitem"><a href="/structor/" class="nav-link">
+  框架
+</a></li><li class="dropdown-subitem"><a href="/devops/" class="nav-link">
+  Devops
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/code/" class="nav-link">
+  Code
+</a></div><div class="nav-item"><a href="/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="记录" class="dropdown-title"><span class="title">记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/record/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/record/bookVideo/" class="nav-link">
+  书籍、视频进度
+</a></li><li class="dropdown-item"><!----> <a href="/record/target/" class="nav-link">
+  目标
+</a></li><li class="dropdown-item"><!----> <a href="/record/thinking/" class="nav-link">
+  想法
+</a></li><li class="dropdown-item"><!----> <a href="/record/excerpt/" class="nav-link">
+  摘抄
+</a></li><li class="dropdown-item"><!----> <a href="/record/updatePlanning/" class="nav-link">
+  更新计划
+</a></li></ul></div></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  网站构建
+</a></div><div class="nav-item"><a href="/personal/" class="nav-link">
+  个人简介
+</a></div> <a href="https://github.com/kindredPP" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/vue/record/" class="nav-link">
+  笔记
+</a></li><li class="dropdown-item"><!----> <a href="/vue/sourcecode/" class="nav-link">
+  源码
+</a></li><li class="dropdown-item"><!----> <a href="/vue/extends/vueToElectron.html" class="nav-link">
+  扩展
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Nodejs" class="dropdown-title"><span class="title">Nodejs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/nodejs/book/" class="nav-link">
+  视频书籍总结
+</a></li><li class="dropdown-item"><!----> <a href="/nodejs/nvm/" class="nav-link">
+  nvm安装
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="性能" class="dropdown-title"><span class="title">性能</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/performance/webpack/" class="nav-link">
+  webpack性能提升
+</a></li><li class="dropdown-item"><!----> <a href="/performance/vue/" class="nav-link">
+  vue性能
+</a></li><li class="dropdown-item"><!----> <a href="/performance/nodejs/" class="nav-link">
+  nodejs性能
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/front-end/ecma/this.html" class="nav-link">
+  ECMA
+</a></li><li class="dropdown-subitem"><a href="/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/front-end/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/front-end/ast/" class="nav-link">
+  AST
+</a></li><li class="dropdown-subitem"><a href="/front-end/rules/" class="nav-link">
+  代码规范
+</a></li></ul></li><li class="dropdown-item"><h4>
+          架构
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/cli-tool/" class="nav-link">
+  构建工具
+</a></li><li class="dropdown-subitem"><a href="/select/" class="nav-link">
+  选型
+</a></li><li class="dropdown-subitem"><a href="/structor/" class="nav-link">
+  框架
+</a></li><li class="dropdown-subitem"><a href="/devops/" class="nav-link">
+  Devops
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/code/" class="nav-link">
+  Code
+</a></div><div class="nav-item"><a href="/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="记录" class="dropdown-title"><span class="title">记录</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/record/interview/" class="nav-link">
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/record/bookVideo/" class="nav-link">
+  书籍、视频进度
+</a></li><li class="dropdown-item"><!----> <a href="/record/target/" class="nav-link">
+  目标
+</a></li><li class="dropdown-item"><!----> <a href="/record/thinking/" class="nav-link">
+  想法
+</a></li><li class="dropdown-item"><!----> <a href="/record/excerpt/" class="nav-link">
+  摘抄
+</a></li><li class="dropdown-item"><!----> <a href="/record/updatePlanning/" class="nav-link">
+  更新计划
+</a></li></ul></div></div><div class="nav-item"><a href="/guide/" class="nav-link">
+  网站构建
+</a></div><div class="nav-item"><a href="/personal/" class="nav-link">
+  个人简介
+</a></div> <a href="https://github.com/kindredPP" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/front-end/ecma/this.html" class="sidebar-link">this使用</a></li><li><a href="/front-end/ecma/closure.html" class="sidebar-link">js作用域，闭包</a></li><li><a href="/front-end/ecma/array.html" class="sidebar-link">Array</a></li><li><a href="/front-end/ecma/string.html" class="active sidebar-link">slice、substr、substring</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/front-end/ecma/string.html#substr" class="sidebar-link">substr</a></li><li class="sidebar-sub-header"><a href="/front-end/ecma/string.html#substring" class="sidebar-link">substring</a></li><li class="sidebar-sub-header"><a href="/front-end/ecma/string.html#slice-start-end" class="sidebar-link">slice(start, end)</a></li></ul></li><li><a href="/front-end/ecma/summary.html" class="sidebar-link">requestAnimationFrame</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="slice、substr、substring"><a href="#slice、substr、substring" class="header-anchor">#</a> slice、substr、substring</h1> <h2 id="substr"><a href="#substr" class="header-anchor">#</a> substr</h2> <p>描述：在字符串中抽取从start位置开始的指定长度的子字符串。</p> <p>用法：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>stringObj<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>start <span class="token punctuation">[</span><span class="token punctuation">,</span> length <span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>参数：start：必选项。所需的子字符串的起始位置。字符串中的第一个字符的索引为 0。
+length：可选项。指定的返回子字符串长度，当省略该值时，表示抽取从start位置到stringObj末尾的子字符串。当该值为0或负数时，将返回一个空字符串。</p> <h2 id="substring"><a href="#substring" class="header-anchor">#</a> substring</h2> <p>描述：截取字符串指定范围内的子字符串，含头不含尾即[start,end)。</p> <p>用法：</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>stringObj<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> end<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>参数：start：指明截取的起始位置，该索引从 0 开始起算。
+end：指明截取的结束位置，该索引从 0 开始起算。当省略该值时，则截取从开始位置到stringObj末尾的字符串。</p> <p>说明:</p> <ol><li><p>subtring方法使用start和end两者中的绝对值作为子字符串的起始点。例如，str.substring(0,3)和str.substring(0,3)的结果是一样的。</p></li> <li><p>如果start或end为NaN或者负数，那么该参数将会被自动替换为0。</p></li> <li><p>截取的字符串长度是start-end的差的绝对值，即：|start-end|=length。</p></li></ol> <p>substring(start, stop)原则上参数不能为负数，若强行传递负数，在执行时会被当成0处理。</p> <p>另外，如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）。如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数。</p> <h2 id="slice-start-end"><a href="#slice-start-end" class="header-anchor">#</a> slice(start, end)</h2> <p>方法可提取字符串的某个部分，并以新的字符串返回被提取的部分。</p> <p>使用 start（包含） 和 end（不包含） 参数来指定字符串提取的部分。</p> <p>字符串中第一个字符位置为 0, 第二个字符位置为 1, 以此类推。</p> <p>提示： 如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/kindredPP/steven/edit/master/docs/front-end/ecma/string.md" target="_blank" rel="noopener noreferrer">编辑内容（个人使用）</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/12/2020, 1:01:21 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/front-end/ecma/array.html" class="prev">
+        Array
+      </a></span> <span class="next"><a href="/front-end/ecma/summary.html">
+        requestAnimationFrame
+      </a>
+      →
+    </span></p></div>  <div class="ValineComment" data-v-6e758a53><div id="vcomments" data-v-6e758a53></div> <hr data-v-6e758a53> <span id="/front-end/ecma/string.html" data-flag-title="slice、substr、substring" class="leancloud-visitors" data-v-6e758a53><em class="post-meta-item-text" data-v-6e758a53>文章阅读量</em> <i class="leancloud-visitors-count" data-v-6e758a53>1</i></span></div></main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.0a6b0362.js" defer></script><script src="/assets/js/3.9f351766.js" defer></script><script src="/assets/js/2.cf7292cc.js" defer></script><script src="/assets/js/12.9c6a0b48.js" defer></script>
+  </body>
+</html>
